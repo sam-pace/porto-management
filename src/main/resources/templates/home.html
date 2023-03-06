@@ -1,0 +1,44 @@
+<head th:replace="~{base :: head}">
+</head>
+
+<body>
+
+<div th:replace="~{base :: navbar}"></div>
+
+<div class="container mb-2">
+    <h1>Containers</h1>
+    <a href="/form"><button class="btn btn-dark">Adicionar
+        Container</button></a>
+        <br>
+        <br>
+    <table class="table table-light">
+
+        <tr class="table-dark">
+            <th></th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Nº do container</th>
+            <th scope="col">Status</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Ações</th>
+        </tr>
+
+        <tr th:each="cont : ${containers}">
+            <th scope="row"></th>
+            <td><span th:text="${cont.cliente}"></span></td>
+            <td><span th:text="${cont.numero_container}"></span></td>
+            <td><span th:text="${cont.status}"></td>
+            <td><span th:text="${cont.tipo_container}"></span></td>
+            <td><span th:text="${cont.categoria}"></span></td>
+            <td class="buttons ">
+                <a th:href="@{form/{id}(id=${cont.id})}"  th:method="get" 
+                class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a th:href="@{delete/{id}(id=${cont.id})}" th:method="delete" 
+                class="btn btn-danger"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>

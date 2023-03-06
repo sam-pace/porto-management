@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head th:replace="~{base :: head}">
+</head>
+
+<body>
+
+<div th:replace="~{base :: navbar}"></div>
+<div class="container">
+    <h1 class="mb-3">Atualizar dados</h1>
+    <form action="/home" th:object="${containers}" th:action="@{/update/{id}(id=${containers.id})}" method="post">
+
+        <div th:replace="~{base :: form}"></div>
+
+        <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-dark">Atualizar</button>
+        </div>
+    </form>
+</div>
+
+</body>
