@@ -23,6 +23,7 @@
     }
 
     body {
+
       background-color: rgb(0, 0, 0);
     }
 
@@ -44,7 +45,7 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem 0;
-      
+
     }
 
     .col-3 {
@@ -59,6 +60,16 @@
     h1 {
       color: white;
     }
+
+    footer {
+    clear: both;
+    position: fixed;
+    width: 100%;
+    top: 95vh;
+    padding: 0.2rem;
+    height: 2.5rem;
+    }
+
   </style>
 </head>
 
@@ -77,14 +88,15 @@
 
 <div th:fragment="form">
   <div class="card bg-dark text-white">
-  <div class="form-group">
-    <label for="cliente" class="form-label">Nome do cliente</label>
-    <input class="form-control" type="text" th:field="*{cliente}" id="cliente" placeholder="Ex: MSC" required />
-    <label for="inputNumeroContainer" class="form-label">
-      Numero do container</label>
-    <input th:field="*{numero_container}" type="text" class="form-control" id="inputNumeroContainer"
-      placeholder="Ex: TEST1234567" required pattern="^[A-Za-z]{4}[0-9]{7}$" title="Deve conter 4 letras e 7 números" />
-    
+    <div class="form-group">
+      <label for="cliente" class="form-label">Nome do cliente</label>
+      <input class="form-control" type="text" th:field="*{cliente}" id="cliente" placeholder="Ex: MSC" required />
+      <label for="inputNumeroContainer" class="form-label">
+        Numero do container</label>
+      <input th:field="*{numero_container}" type="text" class="form-control" id="inputNumeroContainer"
+        placeholder="Ex: TEST1234567" required pattern="^[A-Za-z]{4}[0-9]{7}$"
+        title="Deve conter 4 letras e 7 números" />
+
       <div class="col-3">
         <label for="inputTipoContainer" class="form-label">Tipo do container</label>
         <select th:field="*{tipo_container}" id="inputTipoContainer" class="form-select">
@@ -101,14 +113,18 @@
         </select>
       </div>
 
-    <div class="col-3">
-      <label for="inputCategoria" class="form-label">Categoria</label>
-      <select th:field="*{categoria}" id="inputCategoria" class="form-select">
-        <option value="Importacao">Importação</option>
-        <option value="Exportacao">Exportação</option>
-      </select>
+      <div class="col-3">
+        <label for="inputCategoria" class="form-label">Categoria</label>
+        <select th:field="*{categoria}" id="inputCategoria" class="form-select">
+          <option value="Importacao">Importação</option>
+          <option value="Exportacao">Exportação</option>
+        </select>
+      </div>
     </div>
   </div>
 </div>
 </div>
+
+<div th:fragment="footer">
+  <footer class="text-center bg-dark text-muted">Desenvolvido por Samuel Pace</footer>
 </div>
