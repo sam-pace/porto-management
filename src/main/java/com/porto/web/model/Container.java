@@ -2,8 +2,6 @@ package com.porto.web.model;
 
 import java.io.Serializable;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import com.porto.web.model.enums.Status;
 import com.porto.web.model.enums.TipoContainer;
 
@@ -13,6 +11,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +27,7 @@ public class Container implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotBlank
+    @NotEmpty
     private String cliente;
 
     @Pattern(regexp = "^[A-Za-z]{4}[0-9]{7}$", message = "Boa tentativa, mas você deve seguir o padrão exigido.")
