@@ -36,7 +36,7 @@ public class Container implements Serializable {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private TipoContainer tipo_container;
 
     @Enumerated(EnumType.STRING)

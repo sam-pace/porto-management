@@ -1,15 +1,15 @@
 package com.porto.web.model.enums;
 
 public enum TipoContainer {
-    Vinte("20"), Quarenta("40");
+    VINTE(20), QUARENTA(40);
 
-    private String valor;
+    private int valor;
 
-    private TipoContainer(String valor) {
+    private TipoContainer(int valor) {
         this.valor = valor;
     }
 
-    public String getTipoContainer() {
+    public int getTipoContainer() {
         return valor;
 
     }

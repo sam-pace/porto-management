@@ -1,7 +1,7 @@
 package com.porto.web.model.enums;
 
 public enum Status {
-    Cheio("cheio"), Vazio("Vazio");
+    CHEIO("cheio"), VAZIO("vazio");
 
     private String valor;
 

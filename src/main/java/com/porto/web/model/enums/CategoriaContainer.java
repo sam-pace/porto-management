@@ -1,7 +1,7 @@
 package com.porto.web.model.enums;
 
 public enum CategoriaContainer {
-    Importacao("improtacao"), Exportacao("exportacao");
+    Importacao("importacao"), Exportacao("exportacao");
 
     private String valor;
 
